@@ -90,62 +90,6 @@ function Sparkle({ className }) {
   );
 }
 
-function LeavesDecor({ className }) {
-  return (
-    <motion.div
-      animate={{ rotate: [0, 3, 0], y: [0, -4, 0] }}
-      transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-      className={className}
-      aria-hidden
-    >
-      <svg
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full drop-shadow-md select-none pointer-events-none"
-      >
-        {/* Main stem */}
-        <path
-          d="M110 115 C 88 95, 70 65, 58 35"
-          stroke="#15803d"
-          strokeWidth="3.5"
-          strokeLinecap="round"
-        />
-        {/* Top leaf */}
-        <path
-          d="M58 35 C 50 15, 70 8, 78 20 C 86 32, 68 44, 58 35 Z"
-          fill="url(#leaf-grad-1)"
-        />
-        {/* Middle-left leaf */}
-        <path
-          d="M70 56 C 46 48, 42 70, 56 78 C 70 86, 80 69, 70 56 Z"
-          fill="url(#leaf-grad-2)"
-        />
-        {/* Middle-right leaf */}
-        <path
-          d="M80 64 C 102 52, 112 72, 100 84 C 88 96, 74 80, 80 64 Z"
-          fill="url(#leaf-grad-1)"
-        />
-        {/* Bottom-left leaf */}
-        <path
-          d="M90 90 C 70 84, 66 104, 80 110 C 94 116, 100 100, 90 90 Z"
-          fill="url(#leaf-grad-2)"
-        />
-        <defs>
-          <linearGradient id="leaf-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#4ade80" />
-            <stop offset="100%" stopColor="#16a34a" />
-          </linearGradient>
-          <linearGradient id="leaf-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#86efac" />
-            <stop offset="100%" stopColor="#22c55e" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </motion.div>
-  );
-}
-
 export default function Hero() {
   const [downloading, setDownloading] = useState(false);
 
@@ -207,7 +151,7 @@ export default function Hero() {
           {/* Heading with cute heart and underline matching the design */}
           <motion.div variants={item} className="relative mt-6">
             {/* Hand-drawn outline heart with radiant accent marks */}
-            <div className="absolute -top-4 left-[16.5rem] sm:left-[18.5rem] select-none pointer-events-none flex items-center gap-0.5 text-brand-500 animate-float [animation-delay:1s]">
+            <div className="absolute -top-4 left-[15.5rem] sm:left-[17.5rem] select-none pointer-events-none flex items-center gap-0.5 text-brand-500 animate-float [animation-delay:1s]">
               <span className="text-3xl sm:text-4xl font-hand leading-none">♡</span>
               <div className="flex flex-col gap-1 -rotate-12">
                 <span className="w-2 h-0.5 bg-brand-400 rounded-full" />
@@ -218,10 +162,10 @@ export default function Hero() {
             <h1 className="text-5xl font-black leading-[1.12] tracking-tight text-[#1e133d] dark:text-white sm:text-6xl lg:text-7xl">
               Hello, I&apos;m
               <span className="relative mt-1 block">
-                <span className="gradient-text font-black">Fatima Abu Shaera</span>
+                <span className="gradient-text font-black">Fatima Eyad</span>
                 {/* Hand-drawn smooth purple-to-pink underline doodle */}
                 <svg
-                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-48 sm:w-60"
+                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-44 sm:w-56"
                   viewBox="0 0 250 16"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -305,76 +249,73 @@ export default function Hero() {
 
         {/* ---- RIGHT COLUMN (Hero Visual Artwork) ---- */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92, x: 30 }}
+          initial={{ opacity: 0, scale: 0.94, x: 20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-          className="relative mx-auto w-full max-w-lg lg:col-span-6 xl:col-span-6 flex items-center justify-center py-6"
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          className="relative mx-auto w-full max-w-xl lg:max-w-none lg:col-span-6 xl:col-span-6 flex items-end justify-center -mt-6 sm:-mt-10 lg:-mt-14 pb-2"
         >
           {/* Ambient glow behind artwork */}
-          <div className="absolute inset-0 rounded-full bg-brand-400/25 dark:bg-brand-600/25 blur-3xl -z-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-80 sm:size-[28rem] lg:size-[36rem] rounded-full bg-brand-400/25 dark:bg-brand-600/20 blur-3xl -z-10 pointer-events-none" />
 
-          {/* Composition Container matching the design */}
-          <div className="relative mx-auto flex items-center justify-center w-full max-w-[430px] sm:max-w-[470px] aspect-[1/1] select-none">
-            {/* 1) Outer delicate orbit rings */}
-            <div className="absolute inset-0 rounded-full border border-brand-300/70 dark:border-brand-500/30 scale-[1.06] pointer-events-none animate-[spin_36s_linear_infinite]">
-              {/* Satellite dot on the orbit ring */}
-              <span className="absolute top-10 left-16 size-2.5 rounded-full bg-brand-500 shadow-[0_0_10px_#8d56e2]" />
+          {/* Composition Stage matching WhatsApp Image exactly */}
+          <div className="relative mx-auto w-full max-w-[500px] sm:max-w-[570px] lg:max-w-[640px] xl:max-w-[680px] h-[510px] sm:h-[590px] lg:h-[660px] xl:h-[690px] select-none flex items-end justify-center">
+
+            {/* Defined soft lilac organic lobe on the left (matches reference exactly) */}
+            <div className="absolute left-[-10%] sm:left-[-14%] bottom-[16%] sm:bottom-[18%] w-[210px] sm:w-[270px] lg:w-[310px] h-[170px] sm:h-[210px] lg:h-[240px] rounded-[50%_50%_45%_55%_/_60%_40%_60%_40%] bg-gradient-to-tr from-[#ecd9fd] to-[#e4cbfd] dark:from-[#2e1452] dark:to-[#230d3f] border border-[#dfc4fb]/60 dark:border-brand-700/30 z-0 pointer-events-none shadow-sm" />
+
+            {/* 1) Outer delicate orbit ring with satellite purple dot */}
+            <div className="absolute top-3 sm:top-5 lg:top-6 left-1/2 -translate-x-[48%] size-[380px] sm:size-[460px] lg:size-[530px] xl:size-[570px] rounded-full border-[1.5px] border-[#caa6f8] dark:border-brand-500/40 pointer-events-none z-0">
+              {/* Satellite purple dot on orbit ring */}
+              <span className="absolute left-[2%] top-[48%] size-2.5 sm:size-3 rounded-full bg-[#8244e8] shadow-[0_0_10px_#8244e8]" />
             </div>
 
-            <div className="absolute inset-0 rounded-full border border-dashed border-brand-200/50 dark:border-brand-700/30 scale-[1.16] pointer-events-none animate-[spin_48s_linear_infinite_reverse]" />
+            {/* 2) Main rich pastel lavender circle (matches #ddc4fd from reference) */}
+            <div className="absolute top-7 sm:top-9 lg:top-10 left-1/2 -translate-x-[48%] size-[340px] sm:size-[410px] lg:size-[480px] xl:size-[515px] rounded-full bg-gradient-to-br from-[#e1ccfd] via-[#ddc4fd] to-[#d3aefa] dark:from-[#3d1c6e] dark:via-[#33155e] dark:to-[#240d44] shadow-[inset_0_2px_18px_rgba(168,85,247,0.18)] z-0" />
 
-            {/* 2) Soft pastel purple backdrop circle */}
-            <div className="absolute inset-4 sm:inset-5 rounded-full bg-gradient-to-tr from-[#d8b4fe]/85 via-[#e9d5ff]/70 to-[#f3e8ff]/90 dark:from-[#6d33cb]/40 dark:via-[#421a82]/35 dark:to-[#1f103a]/50 shadow-inner" />
+            {/* 3) Sparkling Stars positioned around the circle */}
+            {/* Top-Left Star */}
+            <Sparkle className="absolute top-[8%] sm:top-[10%] left-[6%] sm:left-[8%] size-6 sm:size-7 text-[#7c3aed] dark:text-brand-300 animate-twinkle pointer-events-none drop-shadow-sm z-10" />
 
-            {/* 3) Central Portrait with smooth floating motion */}
-            <motion.div
-              animate={{ y: [-7, 7, -7] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-full h-full flex items-center justify-center"
-            >
-              <div className="relative w-[90%] h-[95%]">
-                <Image
-                  src="/portrait.png"
-                  alt="Fatima Abu Shaeera - Front-End Developer"
-                  fill
-                  priority
-                  className="object-contain drop-shadow-2xl"
-                />
-              </div>
-            </motion.div>
+            {/* Lower-Left Star */}
+            <Sparkle className="absolute top-[44%] sm:top-[46%] left-[0%] sm:left-[2%] size-5 sm:size-6 text-[#8b5cf6] dark:text-brand-400 animate-twinkle [animation-delay:1.5s] pointer-events-none drop-shadow-sm z-10" />
+
+            {/* Top-Right Star */}
+            <Sparkle className="absolute top-[4%] sm:top-[6%] right-[8%] sm:right-[10%] size-5 sm:size-6 text-[#7c3aed] dark:text-brand-300 animate-twinkle [animation-delay:0.8s] pointer-events-none drop-shadow-sm z-10" />
+
+            {/* Mid-Right Star */}
+            <Sparkle className="absolute top-[46%] sm:top-[48%] right-[2%] sm:right-[4%] size-5 sm:size-6 text-[#8b5cf6] dark:text-brand-400 animate-twinkle [animation-delay:2.2s] pointer-events-none drop-shadow-sm z-10" />
 
             {/* 4) Floating Code Badge </> on the right side */}
             <motion.div
               animate={{
-                y: [-8, 8, -8],
-                rotate: [-11, -7, -11],
+                y: [-5, 5, -5],
+                rotate: [-14, -10, -14],
               }}
               transition={{
-                duration: 4.2,
+                duration: 4.5,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              whileHover={{ scale: 1.15, rotate: -4 }}
-              className="absolute -right-2 sm:-right-4 top-[24%] sm:top-[26%] z-20 cursor-pointer select-none rounded-2xl bg-gradient-to-br from-[#8d56e2] via-[#7c3aed] to-[#5725a8] px-4 py-2.5 sm:px-5 sm:py-3 shadow-xl shadow-brand-600/40 border border-white/30 backdrop-blur-xs flex items-center justify-center transition-all hover:shadow-2xl hover:shadow-brand-500/60"
-              title="Code & Front-End"
+              whileHover={{ scale: 1.1, rotate: -8 }}
+              className="absolute right-0 sm:right-2 lg:right-3 top-[17%] sm:top-[19%] z-30 cursor-pointer select-none rounded-2xl bg-gradient-to-br from-[#8d56e2] via-[#7c3aed] to-[#5923b0] px-4 py-2.5 sm:px-5 sm:py-3 shadow-xl shadow-brand-700/40 border border-white/30 backdrop-blur-xs flex items-center justify-center transition-all hover:shadow-2xl hover:shadow-brand-500/50"
+              title="Code"
             >
               <span className="font-mono text-xl sm:text-2xl font-black text-white tracking-wider leading-none drop-shadow-xs">
                 &lt;/&gt;
               </span>
             </motion.div>
 
-            {/* 5) Sparkling Stars (4 distinct positions matching design) */}
-            {/* Top-Left Star */}
-            <Sparkle className="absolute left-2 sm:left-4 top-10 sm:top-12 size-6 sm:size-7 text-brand-600 dark:text-brand-300 animate-twinkle pointer-events-none drop-shadow-sm z-20" />
-
-            {/* Mid/Lower-Left Star */}
-            <Sparkle className="absolute -left-2 sm:left-1 top-[56%] size-5 sm:size-6 text-brand-500 dark:text-brand-400 animate-twinkle [animation-delay:1.5s] pointer-events-none drop-shadow-sm z-20" />
-
-            {/* Top-Right Star */}
-            <Sparkle className="absolute right-8 sm:right-12 top-4 sm:top-6 size-5 sm:size-6 text-brand-600 dark:text-brand-400 animate-twinkle [animation-delay:0.8s] pointer-events-none drop-shadow-sm z-20" />
-
-            {/* Bottom-Right Star */}
-            <Sparkle className="absolute right-6 sm:right-10 bottom-24 sm:bottom-28 size-5 sm:size-6 text-brand-500 dark:text-brand-300 animate-twinkle [animation-delay:2.2s] pointer-events-none drop-shadow-sm z-20" />
+            {/* 5) Central Portrait (Raised up, matching design) */}
+            <div className="relative z-20 h-[470px] sm:h-[550px] lg:h-[625px] xl:h-[660px] w-auto aspect-[1176/1338] bottom-4 sm:bottom-6 lg:bottom-8 pointer-events-none select-none flex-shrink-0">
+              <Image
+                src="/hero-portrait.png"
+                alt="Fatima Eyad - Front-End Developer"
+                fill
+                sizes="(max-width: 640px) 460px, (max-width: 1024px) 580px, 660px"
+                priority
+                className="object-contain object-bottom drop-shadow-2xl"
+              />
+            </div>
 
           </div>
         </motion.div>
