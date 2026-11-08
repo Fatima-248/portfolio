@@ -121,7 +121,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden scroll-mt-24 pt-10 pb-16 md:pt-14 md:pb-24"
+      className="relative w-full overflow-hidden scroll-mt-24 pt-8 pb-12 sm:pt-10 sm:pb-16 md:pt-14 md:pb-24"
     >
       {/* Full-width soft ambient background wash */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -131,13 +131,13 @@ export default function Hero() {
       </div>
 
       {/* Centered content grid matching design */}
-      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-6 lg:grid-cols-12 lg:gap-12">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12">
         {/* ---- LEFT COLUMN (Content) ---- */}
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="relative z-10 lg:col-span-6 xl:col-span-6"
+          className="relative z-10 min-w-0 lg:col-span-6 xl:col-span-6"
         >
           {/* Pill Badge: ● Front-End Developer */}
           <motion.span
@@ -151,7 +151,7 @@ export default function Hero() {
           {/* Heading with cute heart and underline matching the design */}
           <motion.div variants={item} className="relative mt-6">
             {/* Hand-drawn outline heart with radiant accent marks */}
-            <div className="absolute -top-4 left-[15.5rem] sm:left-[17.5rem] select-none pointer-events-none flex items-center gap-0.5 text-brand-500 animate-float [animation-delay:1s]">
+            <div className="absolute -top-4 left-[12.5rem] sm:left-[17.5rem] select-none pointer-events-none flex items-center gap-0.5 text-brand-500 animate-float [animation-delay:1s]">
               <span className="text-3xl sm:text-4xl font-hand leading-none">♡</span>
               <div className="flex flex-col gap-1 -rotate-12">
                 <span className="w-2 h-0.5 bg-brand-400 rounded-full" />
@@ -159,7 +159,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <h1 className="text-5xl font-black leading-[1.12] tracking-tight text-[#1e133d] dark:text-white sm:text-6xl lg:text-7xl">
+            <h1 className="text-[clamp(1.8rem,9.4vw,2.5rem)] font-black leading-[1.12] tracking-tight text-[#1e133d] dark:text-white sm:text-6xl lg:text-7xl">
               Hello, I&apos;m
               <span className="relative mt-1 block">
                 <span className="gradient-text font-black">Fatima Eyad</span>
@@ -198,12 +198,12 @@ export default function Hero() {
           </motion.p>
 
           {/* Call to Actions matching design */}
-          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
+          <motion.div variants={item} className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
             <motion.a
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.97 }}
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 font-bold text-white shadow-xl shadow-brand-600/30 transition-all hover:bg-brand-700 hover:shadow-brand-600/50"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-600 px-5 py-3.5 font-bold text-white shadow-xl shadow-brand-600/30 transition-all hover:bg-brand-700 hover:shadow-brand-600/50 sm:w-auto sm:px-7"
             >
               Explore My Work <ArrowRight className="size-4" />
             </motion.a>
@@ -215,7 +215,7 @@ export default function Hero() {
               type="button"
               onClick={handleDownloadCV}
               disabled={downloading}
-              className="inline-flex cursor-pointer items-center gap-2 rounded-full border-2 border-brand-800/40 dark:border-brand-400 bg-white dark:bg-[#1f103a] px-7 py-3.5 font-bold text-brand-900 dark:text-white shadow-xs transition-all hover:bg-brand-50 dark:hover:bg-[#2c1752] disabled:opacity-70"
+              className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border-2 border-brand-800/40 dark:border-brand-400 bg-white dark:bg-[#1f103a] px-5 py-3.5 font-bold text-brand-900 dark:text-white shadow-xs transition-all hover:bg-brand-50 dark:hover:bg-[#2c1752] disabled:opacity-70 sm:w-auto sm:px-7"
             >
               <span>{downloading ? "Downloading..." : "Download CV"}</span>
               <Download className={`size-4 ${downloading ? "animate-bounce" : ""}`} />
@@ -224,7 +224,7 @@ export default function Hero() {
 
           {/* Tech icons row matching Image 2 */}
           <motion.div variants={item} className="mt-10">
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:justify-start sm:gap-3">
               {techs.map(({ Icon, color, bgLight, bgDark, label }) => (
                 <motion.div
                   key={label}
@@ -252,19 +252,19 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.94, x: 20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-          className="relative mx-auto w-full max-w-xl lg:max-w-none lg:col-span-6 xl:col-span-6 flex items-end justify-center -mt-6 sm:-mt-10 lg:-mt-14 pb-2"
+          className="relative mx-auto w-full min-w-0 max-w-xl lg:max-w-none lg:col-span-6 xl:col-span-6 flex items-end justify-center -mt-6 sm:-mt-10 lg:-mt-14 pb-2"
         >
           {/* Ambient glow behind artwork */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-80 sm:size-[28rem] lg:size-[36rem] rounded-full bg-brand-400/25 dark:bg-brand-600/20 blur-3xl -z-10 pointer-events-none" />
 
           {/* Composition Stage matching WhatsApp Image exactly */}
-          <div className="relative mx-auto w-full max-w-[500px] sm:max-w-[570px] lg:max-w-[640px] xl:max-w-[680px] h-[510px] sm:h-[590px] lg:h-[660px] xl:h-[690px] select-none flex items-end justify-center">
+          <div className="relative mx-auto w-full max-w-[500px] sm:max-w-[570px] lg:max-w-[640px] xl:max-w-[680px] h-[clamp(360px,120vw,470px)] sm:h-[590px] lg:h-[660px] xl:h-[690px] select-none flex items-end justify-center">
 
             {/* 1) Outer delicate orbit ring */}
-            <div className="absolute top-3 sm:top-5 lg:top-6 left-1/2 -translate-x-[48%] size-[380px] sm:size-[460px] lg:size-[550px] xl:size-[610px] rounded-full border-[1.5px] border-[#d8baf6] dark:border-brand-500/40 pointer-events-none z-0" />
+            <div className="absolute top-3 sm:top-5 lg:top-6 left-1/2 -translate-x-[48%] size-[min(100vw,420px)] sm:size-[460px] lg:size-[550px] xl:size-[610px] rounded-full border-[1.5px] border-[#d8baf6] dark:border-brand-500/40 pointer-events-none z-0" />
 
             {/* 2) Main rich pastel lavender circle (matches #ddc4fd from reference) */}
-            <div className="absolute top-7 sm:top-9 lg:top-10 left-1/2 -translate-x-[48%] size-[340px] sm:size-[410px] lg:size-[500px] xl:size-[560px] rounded-full bg-gradient-to-br from-[#e8d8fd] via-[#ddc4fd] to-[#d3aefa] dark:from-[#3d1c6e] dark:via-[#33155e] dark:to-[#240d44] shadow-[inset_0_2px_18px_rgba(168,85,247,0.18)] z-0" />
+            <div className="absolute top-7 sm:top-9 lg:top-10 left-1/2 -translate-x-[48%] size-[min(92vw,380px)] sm:size-[410px] lg:size-[500px] xl:size-[560px] rounded-full bg-gradient-to-br from-[#e8d8fd] via-[#ddc4fd] to-[#d3aefa] dark:from-[#3d1c6e] dark:via-[#33155e] dark:to-[#240d44] shadow-[inset_0_2px_18px_rgba(168,85,247,0.18)] z-0" />
 
             {/* 3) Sparkling Stars positioned around the circle */}
             {/* Top-Left Star */}
@@ -300,12 +300,12 @@ export default function Hero() {
             </motion.div>
 
             {/* 5) Central Portrait (Raised up, matching design) */}
-            <div className="relative z-20 h-[470px] sm:h-[550px] lg:h-[625px] xl:h-[660px] w-auto aspect-[1176/1338] bottom-4 sm:bottom-6 lg:bottom-8 pointer-events-none select-none flex-shrink-0">
+            <div className="relative z-20 h-[min(92vw,470px)] sm:h-[550px] lg:h-[625px] xl:h-[660px] w-auto aspect-[1176/1338] bottom-4 sm:bottom-6 lg:bottom-8 pointer-events-none select-none flex-shrink-0">
               <Image
                 src="/hero-portrait.png"
                 alt="Fatima Eyad - Front-End Developer"
                 fill
-                sizes="(max-width: 640px) 460px, (max-width: 1024px) 580px, 660px"
+                sizes="(max-width: 640px) 82vw, (max-width: 1024px) 580px, 660px"
                 priority
                 className="object-contain object-bottom drop-shadow-2xl"
               />
