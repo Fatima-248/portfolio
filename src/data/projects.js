@@ -66,7 +66,7 @@ export const projects = [
   subtitle: "Next.js · Tailwind CSS",
   description:
     "A modern, responsive portfolio website showcasing my projects, skills, and education, with smooth animations, a dark mode, and a working contact form.",
-  image: "/image.png", 
+  image: "/protfolio.png", 
   bullets: [
     "Built with Next.js App Router and styled with Tailwind CSS",
     "Light and dark themes with smooth Framer Motion animations",
