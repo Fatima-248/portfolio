@@ -260,17 +260,11 @@ export default function Hero() {
           {/* Composition Stage matching WhatsApp Image exactly */}
           <div className="relative mx-auto w-full max-w-[500px] sm:max-w-[570px] lg:max-w-[640px] xl:max-w-[680px] h-[510px] sm:h-[590px] lg:h-[660px] xl:h-[690px] select-none flex items-end justify-center">
 
-            {/* Defined soft lilac organic lobe on the left (matches reference exactly) */}
-            <div className="absolute left-[-10%] sm:left-[-14%] bottom-[16%] sm:bottom-[18%] w-[210px] sm:w-[270px] lg:w-[310px] h-[170px] sm:h-[210px] lg:h-[240px] rounded-[50%_50%_45%_55%_/_60%_40%_60%_40%] bg-gradient-to-tr from-[#ecd9fd] to-[#e4cbfd] dark:from-[#2e1452] dark:to-[#230d3f] border border-[#dfc4fb]/60 dark:border-brand-700/30 z-0 pointer-events-none shadow-sm" />
-
-            {/* 1) Outer delicate orbit ring with satellite purple dot */}
-            <div className="absolute top-3 sm:top-5 lg:top-6 left-1/2 -translate-x-[48%] size-[380px] sm:size-[460px] lg:size-[530px] xl:size-[570px] rounded-full border-[1.5px] border-[#caa6f8] dark:border-brand-500/40 pointer-events-none z-0">
-              {/* Satellite purple dot on orbit ring */}
-              <span className="absolute left-[2%] top-[48%] size-2.5 sm:size-3 rounded-full bg-[#8244e8] shadow-[0_0_10px_#8244e8]" />
-            </div>
+            {/* 1) Outer delicate orbit ring */}
+            <div className="absolute top-3 sm:top-5 lg:top-6 left-1/2 -translate-x-[48%] size-[380px] sm:size-[460px] lg:size-[550px] xl:size-[610px] rounded-full border-[1.5px] border-[#d8baf6] dark:border-brand-500/40 pointer-events-none z-0" />
 
             {/* 2) Main rich pastel lavender circle (matches #ddc4fd from reference) */}
-            <div className="absolute top-7 sm:top-9 lg:top-10 left-1/2 -translate-x-[48%] size-[340px] sm:size-[410px] lg:size-[480px] xl:size-[515px] rounded-full bg-gradient-to-br from-[#e1ccfd] via-[#ddc4fd] to-[#d3aefa] dark:from-[#3d1c6e] dark:via-[#33155e] dark:to-[#240d44] shadow-[inset_0_2px_18px_rgba(168,85,247,0.18)] z-0" />
+            <div className="absolute top-7 sm:top-9 lg:top-10 left-1/2 -translate-x-[48%] size-[340px] sm:size-[410px] lg:size-[500px] xl:size-[560px] rounded-full bg-gradient-to-br from-[#e8d8fd] via-[#ddc4fd] to-[#d3aefa] dark:from-[#3d1c6e] dark:via-[#33155e] dark:to-[#240d44] shadow-[inset_0_2px_18px_rgba(168,85,247,0.18)] z-0" />
 
             {/* 3) Sparkling Stars positioned around the circle */}
             {/* Top-Left Star */}
